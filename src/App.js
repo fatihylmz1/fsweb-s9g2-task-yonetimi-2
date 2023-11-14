@@ -5,6 +5,8 @@ import TaskHookForm from "./TaskHookForm";
 import PeopleForm from "./PeopleForm";
 import { initialTasks, initialTeam } from "./data";
 import { toast } from 'react-toastify';
+import differenceInDays from "date-fns/differenceInDays";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 
 function App() {
@@ -27,6 +29,9 @@ function App() {
 
     toast.success(`Tebrikler! "${ilgiliTask.title}" tamamlandı!`);
   }
+
+  const result = differenceInDays(new Date(2020, 5, 8), new Date(2020, 5, 1));
+  console.log(result);
 
   return (
     <div className="app">
